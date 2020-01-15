@@ -32,7 +32,6 @@ class ContentialClient {
       europe: {
         CONTENT_URL: `https://content-europe.contential.io/v0`,
         CONTENT_SUBSCRIPTION_URL: `wss://content-europe.contential.io/v0`,
-        CONTENT_SUBSCRIPTION_URL: `ws://localhost:4100/v0`,
         GRAPHQL_URL: `https://graphql-europe.contential.io/v0`,
       },
       us: {
