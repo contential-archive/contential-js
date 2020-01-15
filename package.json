@@ -1,6 +1,6 @@
 {
   "name": "contential",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JavaScript client for Contential.",
   "author": "Tom Andre",
   "license": "ISC",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/contential/contential-js#readme",
   "dependencies": {
+    "@babel/runtime": "^7.8.3",
     "axios": "^0.19.1",
     "querystring": "^0.2.0"
   },
@@ -28,7 +29,7 @@
     "@babel/core": "^7.7.7",
     "@babel/node": "^7.7.7",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/polyfill": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.7.7",
     "nodemon": "^1.18.9"
   }
