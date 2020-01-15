@@ -1,12 +1,34 @@
 {
   "name": "contential",
-  "version": "0.0.0-beta",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "JavaScript client for Contential.",
   "author": "Tom Andre",
+  "license": "ISC",
+  "private": false,
+  "main": "./dist/contential.js",
   "scripts": {
+    "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT",
-  "private": false
+  "prepublish": "npm run build",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contential/contential-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/contential/contential-js/issues"
+  },
+  "homepage": "https://github.com/contential/contential-js#readme",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "nodemon": "^1.18.9"
+  }
 }
