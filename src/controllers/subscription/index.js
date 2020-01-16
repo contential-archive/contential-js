@@ -9,7 +9,7 @@ class SubscriptionController {
 
   async subscribe(args) {
     const _this = this;
-    const { regionId, options, apiKey } = args;
+    const { regionId, apiKey } = args;
     const emptyMethod = () => {};
     const onData = args.onData || emptyMethod;
     const onError = args.onError || emptyMethod;
@@ -18,7 +18,7 @@ class SubscriptionController {
     const onFinalDisconnect = args.onFinalDisconnect || emptyMethod;
     const retryDelay = args.retryDelay || 5000;
     const maxRetryAttempts = args.maxRetryAttempts || 10;
-
+    const options = { localeId: args.localeId, records: args.records };
     const apiKeyId = apiKey || this.client.apiKey;
     const optionsString = JSON.stringify(options);
     const query = {
