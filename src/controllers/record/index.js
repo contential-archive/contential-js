@@ -33,6 +33,33 @@ class RecordController {
     }
   }
 
+  async update({ regionId, spaceId, recordId, localeId, data, apiKey }) {
+    try {
+      const apiKeyId = apiKey || this.client.apiKey;
+      regionId = regionId || 'global';
+      const query = {
+        localeId,
+      };
+      const url = `${
+        this.client.config[regionId].CONTENT_URL
+      }/spaces/${spaceId}/records/${recordId}?${queryString.stringify(query)}`;
+      const contentType =
+        typeof data === 'object' ? 'application/json' : 'text/plain';
+      const response = await axios({
+        method: 'PUT',
+        url,
+        headers: {
+          'content-type': contentType,
+          'x-api-key': apiKeyId,
+        },
+        data,
+      });
+      return response.data;
+    } catch (error) {
+      throw error.response.data;
+    }
+  }
+
   async get({ regionId, spaceId, recordId, localeId, apiKey }) {
     try {
       const apiKeyId = apiKey || this.client.apiKey;
