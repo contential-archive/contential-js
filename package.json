@@ -2,8 +2,8 @@
   "name": "contential",
   "version": "0.0.8",
   "description": "JavaScript client for Contential.",
-  "author": "Tom Andre",
-  "license": "ISC",
+  "author": "Marcel Thomas",
+  "license": "MIT",
   "private": false,
   "main": "./dist/contential.js",
   "scripts": {
