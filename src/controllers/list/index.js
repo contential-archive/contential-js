@@ -1,9 +1,11 @@
 import axios from 'axios';
 import queryString from 'querystring';
+import ListItemController from './item';
 
 class ListController {
   constructor({ client }) {
     this.client = client;
+    this.item = new ListItemController({ client, listController: this });
   }
 
   async create({
