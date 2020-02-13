@@ -105,6 +105,49 @@ class ListController {
     }
   }
 
+  async query({
+    regionId,
+    spaceId,
+    listId,
+    localeId,
+    pageSize,
+    page,
+    apiKey,
+    query,
+    orderBy,
+    orderByDirection,
+  }) {
+    try {
+      const apiKeyId = apiKey || this.client.apiKey;
+      regionId = regionId || 'global';
+      const queryObject = {
+        localeId,
+        pageSize,
+        page,
+      };
+      const url = `${
+        this.client.config[regionId].CONTENT_URL
+      }/spaces/${spaceId}/lists/${listId}/query?${queryString.stringify(
+        queryObject,
+      )}`;
+      const response = await axios({
+        method: 'POST',
+        url,
+        headers: {
+          'x-api-key': apiKeyId,
+        },
+        data: {
+          query,
+          orderBy,
+          orderByDirection,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      throw error.response.data;
+    }
+  }
+
   async search({
     regionId,
     spaceId,
